@@ -27,7 +27,7 @@ public abstract class AbstractPage
 	}
 	
 	void linkPage(AbstractPage p) {
-		
+		linkedPages.add(p);
 	}
 	
 	void updateName(String name) {
@@ -39,7 +39,11 @@ public abstract class AbstractPage
 	}
 	
 	void updatePermissions(Profile p) {
-		
+		if(permissions.contains(p)) {
+			permissions.remove(p);
+		} else {
+			permissions.add(p);
+		}
 	}
 	
 	

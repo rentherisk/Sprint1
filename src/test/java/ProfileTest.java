@@ -43,7 +43,6 @@ public class ProfileTest {
 		j1.newApplicant(x);
 		assertEquals(j1.appliedProfiles.get(0), x, "Profile should match expected value");
 		
-		
 		News n1 = o.createNews("Breaking News");
 		assertEquals(o.pageList.get(3).name, "Breaking News", "Title should match expected value");
 		assertEquals(o.newsPostings.get(0).name, "Breaking News", "Title should match expected value");

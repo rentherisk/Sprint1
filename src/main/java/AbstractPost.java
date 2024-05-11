@@ -22,6 +22,7 @@ public abstract class AbstractPost extends AbstractPage
 	
 	void updatePosters(Profile p) {
 		posters.add(p);
+		permissions.add(p);
 	}
 	
 	void newComment(String comment, Profile p) {

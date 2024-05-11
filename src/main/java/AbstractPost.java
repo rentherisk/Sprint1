@@ -8,6 +8,7 @@ public abstract class AbstractPost extends AbstractPage
 	protected List<String> comments;
 	protected List<Profile> commenters;
 	protected List<Profile> posters;
+	protected List<Profile> liked;
 	
 	public AbstractPost(int id, String name) {
 		super(id, name);
@@ -15,6 +16,7 @@ public abstract class AbstractPost extends AbstractPage
 		this.comments = new ArrayList<String>();
 		this.commenters = new ArrayList<Profile>();
 		this.posters = new ArrayList<Profile>();
+		this.liked = new ArrayList<Profile>();
 		
 	}
 	
@@ -22,12 +24,13 @@ public abstract class AbstractPost extends AbstractPage
 		posters.add(p);
 	}
 	
-	void newComment(String s, Profile p) {
-		comments.add(s);
+	void newComment(String comment, Profile p) {
+		comments.add(comment);
 		commenters.add(p);
 	}
 	
-	void newLike() {
+	void newLike(Profile p) {
+		liked.add(p);
 		likes += 1;
 	}
 	

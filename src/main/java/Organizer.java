@@ -28,28 +28,36 @@ public class Organizer
 	}
 	
 	Profile createProfile(String username) {
-		Profile newProfile = new Profile(nextId++, username);
-		profileList.add(newProfile);
-		pageList.add(newProfile);
-		return newProfile;
+		if(usernameList.contains(username)) {
+			System.out.println("Username already exists.");
+			Profile newProfile = new Profile(nextId++, username);
+			return newProfile;
+		} else {
+			Profile newProfile = new Profile(nextId++, username);
+			profileList.add(newProfile);
+			pageList.add(newProfile);
+			usernameList.add(username);
+			newProfile.permissions.add(newProfile);
+			return newProfile;
+		}
 	}
 	
-	Jobs createJob() {
-		Jobs newJob = new Jobs(nextId++, "New Post");
+	Jobs createJob(String name) {
+		Jobs newJob = new Jobs(nextId++, name);
 		jobPostings.add(newJob);
 		pageList.add(newJob);
 		return newJob;
 	}
 	
-	Project createProject() {
-		Project newProject = new Project(nextId++, "New Project");
+	Project createProject(String name) {
+		Project newProject = new Project(nextId++, name);
 		projectList.add(newProject);
 		pageList.add(newProject);
 		return newProject;
 	}
 	
-	News createNews() {
-		News newNews = new News(nextId++, "New News");
+	News createNews(String name) {
+		News newNews = new News(nextId++, name);
 		newsPostings.add(newNews);
 		pageList.add(newNews);
 		return newNews;

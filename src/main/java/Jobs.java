@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Jobs extends AbstractPage
+public class Jobs extends AbstractPost
 {
 	protected List<Profile> appliedProfiles;
 

@@ -1,7 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class News extends AbstractPage
+public class News extends AbstractPost
 {
 	protected List<String> sources;
 

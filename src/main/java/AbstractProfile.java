@@ -4,7 +4,7 @@ import java.util.List;
 public abstract class AbstractProfile extends AbstractPage
 {
 	protected List<Profile> followedProfiles;
-	protected List<Post> followedPosts;
+	protected List<AbstractPost> followedPosts;
 	protected List<Profile> followersList;
 	protected List<Profile> friendsList;
 	protected List<String> mentorStatus;
@@ -13,22 +13,26 @@ public abstract class AbstractProfile extends AbstractPage
 	public AbstractProfile(int id, String name) {
 		super(id, name);
 		this.followedProfiles = new ArrayList<Profile>();
-		this.followedPosts = new ArrayList<Post>();
+		this.followedPosts = new ArrayList<AbstractPost>();
 		this.followersList = new ArrayList<Profile>();
 		this.friendsList = new ArrayList<Profile>();
 		this.mentorStatus = new ArrayList<String>();
-		this.privacy = true;
+		this.privacy = false;
 	}
 
 	void followProfile(Profile p) {
+		//if(p.privacy == true) {
+			
+		//} else {
 		followedProfiles.add(p);
+		//}
 	}
 	
 	void acceptFollower(Profile p) {
 		followersList.add(p);
 	}
 	
-	void followPost(Post p) {
+	void followPost(AbstractPost p) {
 		followedPosts.add(p);
 	}
 	
@@ -39,5 +43,6 @@ public abstract class AbstractProfile extends AbstractPage
 			privacy = true;
 		}
 	}
+	
 	
 }

@@ -1,5 +1,5 @@
 
-public class Project extends AbstractPage
+public class Project extends AbstractPost
 {
 
 	public Project(int id, String name)
